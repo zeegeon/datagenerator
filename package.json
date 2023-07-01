@@ -1,0 +1,22 @@
+{
+  "name": "chatgptserver",
+  "version": "1.0.0",
+  "description": "node.js project for maiking mock data from chat-gpt api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeegeon/datagenerator.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Ji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeegeon/datagenerator/issues"
+  },
+  "homepage": "https://github.com/zeegeon/datagenerator#readme"
+}
