@@ -1,3 +1,6 @@
+// Open API key
+//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
+
 const http = require("http");
 const app = http.createServer((request, response) => {
   const _url = request.url;

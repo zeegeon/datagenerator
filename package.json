@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/zeegeon/datagenerator/issues"
   },
-  "homepage": "https://github.com/zeegeon/datagenerator#readme"
+  "homepage": "https://github.com/zeegeon/datagenerator#readme",
+  "dependencies": {
+    "openai": "^3.3.0"
+  }
 }
