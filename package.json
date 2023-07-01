@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/zeegeon/datagenerator#readme",
   "dependencies": {
+    "axios": "^1.4.0",
     "openai": "^3.3.0"
   }
 }
