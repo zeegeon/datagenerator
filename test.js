@@ -1,7 +1,3 @@
-// Open API key
-//org-gZDDw5PATuhgIgzIsCoueKBI
-//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
-
 // const http = require("http");
 // const app = http.createServer((request, response) => {
 //   const _url = request.url;
@@ -27,13 +23,7 @@
 // 아래는 open API 서버 구동 코드
 const { Configuration, OpenAIApi } = require("openai");
 
-const configiration = new Configuration({
-  organization: "org-gZDDw5PATuhgIgzIsCoueKBI",
-  apiKey: "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",
-});
-
-console.log("<<--- Hello Node.js ---->>");
-console.log("*- openai api tutorial...");
+const configiration = new Configuration({});
 
 const openai = new OpenAIApi(configiration);
 
@@ -45,11 +35,13 @@ const runPrompt = async () => {
     max_tokens: 300,
     temperature: 0.2,
   });
-  console.log("- completion:\n" + response.data.choices[0].text);
-  console.log("\n- total tokens: " + response.data.usage.total_tokens);
-  console.log("*- completion ended...");
+  console.log(response.data.choices[0].text);
+  //console.log("- completion:\n" + response.data.choices[0].text);
+  //console.log("\n- total tokens: " + response.data.usage.total_tokens);
 };
 runPrompt();
+
+// DB 삽입
 
 // 웹 환경에서 호출
 // async function callChatGPTAPI(prompt) {
