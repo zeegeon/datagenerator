@@ -22,12 +22,17 @@
 
 // 아래는 open API 서버 구동 코드
 const { Configuration, OpenAIApi } = require("openai");
+const schedule = require("node-schedule");
 
-const configiration = new Configuration({});
+const configiration = new Configuration({
+  organization: "org-gZDDw5PATuhgIgzIsCoueKBI",
+  apiKey: "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",
+});
 
 const openai = new OpenAIApi(configiration);
 
 const runPrompt = async () => {
+  console.log("데이터 만드는 중.....");
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt:
@@ -39,9 +44,14 @@ const runPrompt = async () => {
   //console.log("- completion:\n" + response.data.choices[0].text);
   //console.log("\n- total tokens: " + response.data.usage.total_tokens);
 };
-runPrompt();
 
-// DB 삽입
+const job = schedule.scheduleJob("1-59 * * * * *", function () {
+  console.log("1초 마다 실행");
+
+  //runPrompt();
+
+  // DB 삽입
+});
 
 // 웹 환경에서 호출
 // async function callChatGPTAPI(prompt) {
