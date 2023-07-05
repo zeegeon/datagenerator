@@ -24,10 +24,7 @@
 const { Configuration, OpenAIApi } = require("openai");
 const schedule = require("node-schedule");
 
-const configiration = new Configuration({
-  organization: "org-gZDDw5PATuhgIgzIsCoueKBI",
-  apiKey: "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",
-});
+const configiration = new Configuration({});
 
 const openai = new OpenAIApi(configiration);
 
