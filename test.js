@@ -24,7 +24,10 @@
 const { Configuration, OpenAIApi } = require("openai");
 const schedule = require("node-schedule");
 
-const configiration = new Configuration({});
+const configiration = new Configuration({
+  organization: "org-gZDDw5PATuhgIgzIsCoueKBI",
+  apiKey: "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",
+});
 
 const openai = new OpenAIApi(configiration);
 
@@ -33,7 +36,7 @@ const runPrompt = async () => {
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt:
-      "한국인 20대 여성에 대한 하루 소비내역 데이터를 json형식으로 더미 파일 예시를 2개 만들어줘",
+      "한국인 20대 여성에 대한 하루 소비내역 데이터를 json형식으로 더미 파일 예시를 1개 만들어줘",
     max_tokens: 300,
     temperature: 0.2,
   });
@@ -42,13 +45,17 @@ const runPrompt = async () => {
   //console.log("\n- total tokens: " + response.data.usage.total_tokens);
 };
 
-const job = schedule.scheduleJob("1-59 * * * * *", function () {
-  console.log("1초 마다 실행");
+runPrompt();
+runPrompt();
+runPrompt();
+runPrompt();
+// const job = schedule.scheduleJob("1-59 * * * * *", function () {
+//   console.log("1초 마다 실행");
 
-  //runPrompt();
+//   runPrompt();
 
-  // DB 삽입
-});
+//   // DB 삽입
+// });
 
 // 웹 환경에서 호출
 // async function callChatGPTAPI(prompt) {
